@@ -1,0 +1,44 @@
+using System;
+
+namespace fizzbuzz
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool repeat = true;
+            int number;
+            while (repeat)
+            {
+                Console.WriteLine("Adjon meg egy számot 1-300 között!");
+                string input_num = Console.ReadLine();
+                if (int.TryParse(input_num, out number))
+                {
+                    if (number > 1 && number < 300)
+                    {
+                        repeat = false;
+                        for (int x = 0; x <= number; x++)
+                        {
+                            if (x % 2 == 0 && x % 3 == 0)
+                            {
+                                Console.WriteLine("FizzBuzz");
+                            }
+                            else if (x % 2 == 0)
+                            {
+                                Console.WriteLine("Buzz");
+                            }
+                            else if (x % 3 == 0)
+                            {
+                                Console.WriteLine("Fizz");
+                            }
+                            else
+                            {
+                                Console.WriteLine(x);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
